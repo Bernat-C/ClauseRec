@@ -73,7 +73,7 @@ def call(conflicts, instance_name: str):
 
     dimacs = os.path.join(os.path.dirname(__file__),'../..',f'solversjordi/{instance_name}.dimacs')
     features = os.path.join(os.path.dirname(__file__),'../..',f'solversjordi/{instance_name}.features')
-    model = os.path.join(os.path.dirname(__file__),"..","data","models","Regressor64.pt")#"20240425-154025.pt")
+    model = os.path.join(os.path.dirname(__file__),"..","data","models","Regressor.pt")#"20240425-154025.pt")
     
     instance = read_test_instance(dimacs, features, conflicts)
     conflicts = [[x for x in sublist if x != 0] for sublist in conflicts]
