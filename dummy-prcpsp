@@ -1,0 +1,2 @@
+#!/bin/bash
+./solversjordi/bin/release/mrcpsp2smt "$@" --use-assumptions=0 --prcpsp-dummy=1 --encoding=satorder

@@ -125,7 +125,7 @@ class Instance:
         
 def read_test_instance(path_train, path_features, conflicts):
     instance = Instance()
-    pickle_name = os.path.abspath(os.path.join("..", "ClauseRecommender", "data","raw",os.path.basename(path_train + ".pkl")))
+    pickle_name = os.path.abspath(os.path.join("ClauseRecommender", "data","raw",os.path.basename(path_train + ".pkl")))
 
     if  os.path.exists(pickle_name):
         with open(pickle_name, 'rb') as f:
@@ -148,6 +148,7 @@ def read_test_instance(path_train, path_features, conflicts):
         instance.toTensors()
         instance.setName(os.path.basename(path_train))
 
+    print(f"----------------------------{pickle_name}")
     with open(pickle_name, 'wb') as f:
         pickle.dump(instance, f)
     return instance

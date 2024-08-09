@@ -1,0 +1,7 @@
+ClauseRecommender/logs/*
+ClauseRecommender/data/raw
+ClauseRecommender/src/__pycache__
+solversjordi/build
+solversjordi/bin
+solversjordi/temp/*
+instances/*

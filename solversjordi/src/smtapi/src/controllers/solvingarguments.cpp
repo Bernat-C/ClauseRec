@@ -96,9 +96,9 @@ SolvingArguments::SolvingArguments() : Arguments<SolvingArg>(
 	0,
 
 	//Program solving options
-	{arguments::sop("s","solver",SOLVER,"yices",
-	{"yices","lingeling","openwbo","glucose","optimathsat","maple","kissat"},
-	"Solver to use. API only available with yices, glucose. For SMT encodings, only yices. For MaxSAT encodings, only openwbo. For SAT: glucose, maple. Default: yices."),
+	{arguments::sop("s","solver",SOLVER,"maple",
+	{"maple","yices","lingeling","openwbo","glucose","optimathsat","kissat"},
+	"Solver to use. API only available with maple,yices, glucose. For SMT encodings, only yices. For MaxSAT encodings, only openwbo. For SAT: glucose, maple. Default: maple."),
 
 	arguments::bop("e","output-encoding",OUTPUT_ENCODING,false,
 	"If 1, the instance will not be solved but the encoding will be output in stdout. If the encoding does not contain a native optimization functionality, the encoding will correspond to the decision version of the problem with the given/computed bounds. Default: 0."),
@@ -142,8 +142,8 @@ SolvingArguments::SolvingArguments() : Arguments<SolvingArg>(
 	arguments::bop("","print-optimal",PRINT_OPTIMAL_SOLUTION,true,
 	"If 1, the optimal solution will be printed. If --print-nonoptimal=1, then --print-optimal=1 regardless the given value. Default: 1."),
 
-	arguments::bop("","print-nonoptimal",PRINT_NOOPTIMAL_SOLUTIONS,true,
-	"If 1, all the solutions found during the search for the optimal will be printed. Default: 1."),
+	arguments::bop("","print-nonoptimal",PRINT_NOOPTIMAL_SOLUTIONS,false,
+	"If 1, all the solutions found during the search for the optimal will be printed. Default: 0."),
 
 	arguments::bop("","print-checks",PRINT_CHECKS,true,
 	"If 1, all the lower/upper bounds found during the search will be printed. Default: 1."),

@@ -71,8 +71,8 @@ def getClause(dimacs, features, model_file, conflicts: list[frozenset[str]]):
 
 def call(conflicts, instance_name: str):
 
-    dimacs = os.path.join(os.path.dirname(__file__),'../..',f'solversjordi/{instance_name}.dimacs')
-    features = os.path.join(os.path.dirname(__file__),'../..',f'solversjordi/{instance_name}.features')
+    dimacs = os.path.join(os.path.dirname(__file__),'../..',f'solversjordi/temp/{instance_name}.dimacs')
+    features = os.path.join(os.path.dirname(__file__),'../..',f'solversjordi/temp/{instance_name}.features')
     model = os.path.join(os.path.dirname(__file__),"..","data","models","Regressor.pt")#"20240425-154025.pt")
     
     instance = read_test_instance(dimacs, features, conflicts)

@@ -163,11 +163,10 @@ bool MinisatAPIEncoder::assertAndCheck(int lb, int ub, std::vector<literal> * as
 		lastchecktime=0;
 	}
 	else{
-		std::string filename;
-		filename = this->instance_name + ".dimacs";// "auxiliar.dimacs";
+		std::string filename = "./solversjordi/temp/" + this->instance_name + ".dimacs";// "auxiliar.dimacs";
 		s->toDimacs(filename.c_str());
 
-		std::string feature_file = this->instance_name + ".features"; // features.ft
+		std::string feature_file = "./solversjordi/temp/" + this->instance_name + ".features"; // features.ft
 		toFeatureFile(feature_file.c_str());
 
         //Set variables to decide (if option enabled)
